@@ -1,0 +1,11 @@
+{
+  "*.styles.{ts,js}": [
+    "prettier --write",
+    "stylelint --allow-empty-input"
+  ],
+  "*.{ts,tsx,js,jsx}": [
+    "prettier --write",
+    "eslint"
+  ],
+  "*.{md,mdx,json,css,scss,yaml,yml}": "prettier --write"
+}
