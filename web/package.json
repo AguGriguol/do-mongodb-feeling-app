@@ -2,6 +2,29 @@
   "name": "web",
   "version": "0.1.0",
   "private": true,
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "scripts": {
+    "build": "react-app-rewired build",
+    "eject": "react-scripts eject",
+    "format:check": "yarn prettier --list-different \"src/**/*.{ts,tsx,js,jsx}\"",
+    "format": "yarn prettier --write \"src/**/*.{ts,tsx,js,jsx}\"",
+    "lint:css": "stylelint --allow-empty-input src/**/*.styles.{ts,js}",
+    "lint:js": "eslint src --no-error-on-unmatched-pattern --ext .js,.jsx",
+    "lint:ts": "eslint src --ext .ts,.tsx",
+    "lint": "yarn lint:ts && yarn lint:js && yarn lint:css",
+    "start": "cross-env BROWSER='Google Chrome' && react-app-rewired start"
+  },
   "dependencies": {
     "@material-ui/core": "^4.12.1",
     "@material-ui/icons": "^4.11.2",
@@ -17,30 +40,6 @@
     "react-scripts": "4.0.3",
     "typescript": "^4.3.5",
     "web-vitals": "^1.1.2"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
   },
   "devDependencies": {
     "babel-plugin-import": "^1.13.3",
