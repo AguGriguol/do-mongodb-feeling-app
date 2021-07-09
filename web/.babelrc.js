@@ -18,18 +18,6 @@ const plugins = [
       camel2DashComponentName: false
     },
     'icons'
-  ],
-  [
-    'i18next-extract',
-    {
-      defaultNS: 'translation',
-      locales: ['en', 'es'],
-      keyAsDefaultValue: true,
-      keyAsDefaultValueForDerivedKeys: true,
-      keySeparator: '.',
-      nsSeparator: ':',
-      outputPath: 'public/locales/{{locale}}/{{ns}}.json'
-    }
   ]
 ];
 
