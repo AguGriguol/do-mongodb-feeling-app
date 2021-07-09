@@ -13,7 +13,7 @@ const RouteWrapper = ({ children }: RouteWrapperProps) => {
   const isAtLeastSmallViewport = useMediaQuery(theme.breakpoints.up('sm'));
 
   return (
-    <Box bgcolor="transparent" margin="auto" marginBottom={[3, 5]} width={[1, 400]}>
+    <Box bgcolor="transparent" margin="auto" marginBottom={[3, 5]} marginTop={10} width={[1, 400]}>
       <Paper className={classes.root} elevation={isAtLeastSmallViewport ? 1 : 0}>
         {children}
       </Paper>
