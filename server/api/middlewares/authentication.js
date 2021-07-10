@@ -27,7 +27,7 @@ router.use(async (req, res, next) => {
         next();
     }
     catch (err) {
-        return sendErrorResponse(err, res);
+        return sendErrorResponse(StatusCodes.UNAUTHORIZED, res);
     }
 
 });
