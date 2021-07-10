@@ -1,5 +1,7 @@
 
-const express           = require('express');
+const express               = require('express');
+const { sendErrorResponse } = require('../utils/errorResponse');
+const { StatusCodes }       = require('http-status-codes');
 
 const router = express.Router();
 
@@ -12,7 +14,7 @@ router.use(async (req, res, next) => {
         next();
     }
     catch (err) {
-        return errorResponse({ status: StatusCodes.UNAUTHORIZED, error: 'Unauthorized' }, res);
+        return sendErrorResponse(StatusCodes.UNAUTHORIZED, res);
     }
 
 });
