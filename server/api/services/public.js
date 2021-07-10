@@ -3,7 +3,7 @@ function PublicService ({ User }) {
 
     const access = async (data) => {
 
-        let user = await User.findOne({ identifier: data.identifier }).lean();
+        let user = await User.findOne({ identifier: data.identifier }).exec();
         if (!user) {
             const newUser = {
                 identifier: data.identifier
