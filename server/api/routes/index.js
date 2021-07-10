@@ -2,7 +2,7 @@ const { isCelebrateError } = require('celebrate');
 //Routes
 module.exports = (app) => {
     // public routes
-    app.use('/api', require('./public'));
+    app.use('/api/v1', require('./public'));
     // authentication middleware
     app.use(require('../middlewares/authentication'));
     // private routes

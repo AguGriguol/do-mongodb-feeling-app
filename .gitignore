@@ -1,3 +1,4 @@
 .env_development
 .env_production
 ca-certificate.crt
+node_modules

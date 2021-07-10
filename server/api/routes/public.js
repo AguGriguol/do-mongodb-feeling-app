@@ -1,6 +1,6 @@
 const express                           = require('express');
-const { StatusCodes }                   = require('http-status-codes');
 const { Segments, Joi, celebrate }      = require('celebrate');
+const { sendErrorResponse }             = require('../utils/errorResponse');
 
 let router = express.Router();
 
@@ -12,16 +12,16 @@ router.route('/access')
     .post(
         celebrate({
             [Segments.BODY]: Joi.object().keys({
-                identifier: Joi.string(),
+                identifier: Joi.string().required(),
             })
         }),
         async (req, res) => {
             try {
-                let access = await req.container.resolve('PublicService').access(req.body, req.query, auth);
+                let access = await req.container.resolve('PublicService').access(req.body);
                 return res.status(200).json({success: true, ...access });
             }
             catch (err) {
-                return err
+                return sendErrorResponse(err, res);
             }
         });
 
