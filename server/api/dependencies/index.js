@@ -2,6 +2,7 @@ const awilix = require('awilix');
 
 //Services
 const PublicService = require('../services/public');
+const FeelingTypeService = require('../services/feelingType');
 
 const container = awilix.createContainer({
     injectionMode: awilix.InjectionMode.PROXY
@@ -10,6 +11,7 @@ const container = awilix.createContainer({
 container.register({
     //Services
     PublicService: awilix.asFunction(PublicService).singleton(),
+    FeelingTypeService: awilix.asFunction(FeelingTypeService).singleton(),
 });
 
 //Models

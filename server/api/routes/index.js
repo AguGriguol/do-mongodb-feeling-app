@@ -6,7 +6,7 @@ module.exports = (app) => {
     // authentication middleware
     app.use(require('../middlewares/authentication'));
     // private routes
-    // app.use('/api/users', require('./users'));
+    app.use('/api/v1/feeling_types', require('./feelingTypes'));
 
     //Error handling middleware
     app.use((err, req, res, next)=> {
