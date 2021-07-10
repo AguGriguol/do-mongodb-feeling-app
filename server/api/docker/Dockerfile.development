@@ -1,0 +1,15 @@
+FROM node:latest
+
+RUN mkdir -p /srv/api
+WORKDIR /srv/api
+
+ENV NODE_ENV development
+
+ADD ../../api/package.json /srv/api
+RUN npm install
+COPY ../../api /srv/api/
+
+RUN npm install -g nodemon
+
+WORKDIR /srv/api
+CMD nodemon api.js
