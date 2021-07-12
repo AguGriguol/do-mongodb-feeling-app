@@ -10,11 +10,11 @@ module.exports = (app) => {
     app.use('/api/v1/feelings', require('./feeling'));
 
     //Error handling middleware
-    app.use((err, req, res, next)=> {
+    app.use((err, req, res, next) => {
         if (!isCelebrateError(err)) {
             return next(err);
         }
-console.log(err);
+        console.log(err);
         return res.status(400).send({ success: false, error: 'Bad Request' });
     });
-}
+};

@@ -1,11 +1,11 @@
-const express = require("express");
-const { Segments, Joi, celebrate } = require("celebrate");
-const { sendErrorResponse } = require("../utils/errorResponse");
+const express = require('express');
+const { Segments, Joi, celebrate } = require('celebrate');
+const { sendErrorResponse } = require('../utils/errorResponse');
 
 let router = express.Router();
 
 router
-    .route("/")
+    .route('/')
     .get(
         celebrate({
             [Segments.QUERY]: Joi.object().keys({
@@ -18,7 +18,7 @@ router
         async (req, res) => {
             try {
                 let feelings = await req.container
-                    .resolve("FeelingService")
+                    .resolve('FeelingService')
                     .get(req.query, req.auth_data);
                 return res.status(200).json({ success: true, ...feelings });
             } catch (err) {
@@ -38,7 +38,7 @@ router
         async (req, res) => {
             try {
                 let feeling = await req.container
-                    .resolve("FeelingService")
+                    .resolve('FeelingService')
                     .create(req.body, req.auth_data);
                 return res.status(200).json({ success: true, ...feeling });
             } catch (err) {
@@ -48,19 +48,17 @@ router
     );
 
 router
-    .route("/:identifier")
-    .get(
-        async (req, res) => {
-            try {
-                let feeling = await req.container
-                    .resolve("FeelingService")
-                    .getOne(req.params.identifier);
-                return res.status(200).json({ success: true, ...feeling });
-            } catch (err) {
-                return sendErrorResponse(err, res);
-            }
+    .route('/:identifier')
+    .get(async (req, res) => {
+        try {
+            let feeling = await req.container
+                .resolve('FeelingService')
+                .getOne(req.params.identifier);
+            return res.status(200).json({ success: true, ...feeling });
+        } catch (err) {
+            return sendErrorResponse(err, res);
         }
-    )
+    })
     .put(
         celebrate({
             [Segments.BODY]: Joi.object().keys({
@@ -73,7 +71,7 @@ router
         async (req, res) => {
             try {
                 let feeling = await req.container
-                    .resolve("FeelingService")
+                    .resolve('FeelingService')
                     .update(req.params.identifier, req.body);
                 return res.status(200).json({ success: true, ...feeling });
             } catch (err) {
