@@ -12,9 +12,7 @@ const FeelingSchema = new Schema(
         shortDescription: { type: String },
         feelingDescription: { type: String },
         feelingPicture: {
-            fileName: String,
-            url: String,
-            mimeType: String,
+            fileName: { type: String },
         },
     },
     { timestamps: { createdAt: 'created', updatedAt: 'updated' } }

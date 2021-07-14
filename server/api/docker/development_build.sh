@@ -3,6 +3,7 @@ docker run \
 --env-file "$PWD"/../.env_development \
 -v "$PWD"/../database:/srv/api/database \
 -v "$PWD"/../routes:/srv/api/routes \
+-v "$PWD"/../utils:/srv/api/utils \
 -v "$PWD"/../services:/srv/api/services \
 -v "$PWD"/../models:/srv/api/models \
 -v "$PWD"/../middlewares:/srv/api/middlewares \

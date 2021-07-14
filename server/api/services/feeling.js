@@ -5,8 +5,7 @@ function FeelingService({ Feeling, FeelingType }) {
     const get = async (query, auth) => {
         let match = { user: mongoose.Types.ObjectId(auth.user._id) };
         let aggregate = [];
-        if (query.type)
-            match['feelingType.id'] = mongoose.Types.ObjectId(query.type);
+        if (query.type) match['feelingType.id'] = mongoose.Types.ObjectId(query.type);
         if (query.created) match.created = new Date(+query.created);
         if (query.updated) match.updated = new Date(+query.updated);
         if (query.title) match.title = new RegExp(query.title, 'i');
@@ -42,6 +41,9 @@ function FeelingService({ Feeling, FeelingType }) {
             feelingDescription: body.feelingDescription || '',
         };
 
+        if (body.feelingPicture)
+            newFeeling.feelingPicture = body.feelingPicture;
+
         let feeling = await Feeling(newFeeling).save();
 
         return { feeling };
@@ -63,10 +65,9 @@ function FeelingService({ Feeling, FeelingType }) {
                 code: type.code,
             };
         }
-        if (body.shortDescription)
-            feeling.shortDescription = body.shortDescription;
-        if (body.feelingDescription)
-            feeling.feelingDescription = body.feelingDescription;
+        if (body.shortDescription) feeling.shortDescription = body.shortDescription;
+        if (body.feelingDescription) feeling.feelingDescription = body.feelingDescription;
+        if (body.feelingPicture) feeling.feelingPicture = body.feelingPicture;
 
         feeling = await feeling.save();
 

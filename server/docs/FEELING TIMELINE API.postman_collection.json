@@ -312,7 +312,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"title\": \"Me siento genial\",\n    \"shortDescription\": \"Dia complicado pero desafiante\",\n    \"feelingDescription\": \"Working Day\",\n    \"type\": \"60ea1666ffa2d6014629176e\"\n}",
+					"raw": "{\n    \"title\": \"Me siento genial\",\n    \"shortDescription\": \"Dia complicado pero desafiante\",\n    \"feelingDescription\": \"Working Day\",\n    \"type\": \"60ea1666ffa2d6014629176e\",\n    \"feelingPicture\": {\n        \"fileName\": \"cbimage.png\"\n    }\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -930,6 +930,274 @@
 					],
 					"cookie": [],
 					"body": "{\n    \"success\": true,\n    \"feeling\": {\n        \"feelingType\": {\n            \"id\": \"60ea1666ffa2d6014629176e\",\n            \"code\": \"happy\"\n        },\n        \"_id\": \"60ea20fe3a1a1d04c92aa41e\",\n        \"user\": \"60e9f1c38928770016ea5a38\",\n        \"title\": \"Me siento genial\",\n        \"shortDescription\": \"Dia complicado pero desafiante\",\n        \"feelingDescription\": \"Working Day\",\n        \"created\": \"2021-07-10T22:36:46.119Z\",\n        \"updated\": \"2021-07-12T21:00:33.717Z\",\n        \"__v\": 0\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "UPLOAD Image",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{accessToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/Users/agustingriguol/Downloads/cbimage.png"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{protocol}}://{{api_url}}:{{api_port}}/api/{{api_version}}/files",
+					"protocol": "{{protocol}}",
+					"host": [
+						"{{api_url}}"
+					],
+					"port": "{{api_port}}",
+					"path": [
+						"api",
+						"{{api_version}}",
+						"files"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "UPLOAD Image",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/Users/agustingriguol/Downloads/cbimage.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{protocol}}://{{api_url}}:{{api_port}}/api/{{api_version}}/files",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{api_url}}"
+							],
+							"port": "{{api_port}}",
+							"path": [
+								"api",
+								"{{api_version}}",
+								"files"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET,PUT,POST,DELETE,OPTIONS"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type, Authorization, Content-Length, X-Requested-With, X-Access-Token"
+						},
+						{
+							"key": "X-DNS-Prefetch-Control",
+							"value": "off"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=15552000; includeSubDomains"
+						},
+						{
+							"key": "X-Download-Options",
+							"value": "noopen"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "41"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"29-rIr8DP3BecC7eG6KNxRBqlxzrFA\""
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 14 Jul 2021 00:46:19 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"fileName\": \"cbimage.png\"\n}"
+				}
+			]
+		},
+		{
+			"name": "GET IMAGE",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{accessToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{protocol}}://{{api_url}}:{{api_port}}/api/{{api_version}}/files/cbimage.png",
+					"protocol": "{{protocol}}",
+					"host": [
+						"{{api_url}}"
+					],
+					"port": "{{api_port}}",
+					"path": [
+						"api",
+						"{{api_version}}",
+						"files",
+						"cbimage.png"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "GET IMAGE",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{protocol}}://{{api_url}}:{{api_port}}/api/{{api_version}}/files/cbimage.png",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{api_url}}"
+							],
+							"port": "{{api_port}}",
+							"path": [
+								"api",
+								"{{api_version}}",
+								"files",
+								"cbimage.png"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET,PUT,POST,DELETE,OPTIONS"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type, Authorization, Content-Length, X-Requested-With, X-Access-Token"
+						},
+						{
+							"key": "X-DNS-Prefetch-Control",
+							"value": "off"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=15552000; includeSubDomains"
+						},
+						{
+							"key": "X-Download-Options",
+							"value": "noopen"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "192"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"c0-dccSuWpN8qsISYZnt9n+SouGB1s\""
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 14 Jul 2021 00:48:50 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"url\": \"https://do-ag-space.sfo3.digitaloceanspaces.com/feeling_app/cbimage.png?AWSAccessKeyId=LCCVSZY3OWJPNNSCEUFJ&Expires=1626227330&Signature=s7bJt2bbS4vn3Tj5PuvVryu7LKw%3D\"\n}"
 				}
 			]
 		}
