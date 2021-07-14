@@ -8,6 +8,7 @@ module.exports = (app) => {
     // private routes
     app.use('/api/v1/feeling_types', require('./feelingTypes'));
     app.use('/api/v1/feelings', require('./feeling'));
+    app.use('/api/v1/files', require('./files'));
 
     //Error handling middleware
     app.use((err, req, res, next) => {
