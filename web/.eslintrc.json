@@ -14,6 +14,7 @@
     },
     "useJSXTextNode": true,
     "project": "./tsconfig.json",
+    "tsconfigRootDir": "/Users/agustingriguol/Projects/github/do-mongodb-feeling-app/web",
     "warnOnUnsupportedTypeScriptVersion": true
   },
   "plugins": [
@@ -79,7 +80,7 @@
     "class-methods-use-this": "error",
     "complexity": "error",
     "consistent-return": "off",
-    "curly": "error",
+    "curly": "off",
     "default-case": "error",
     "dot-location": [
       "error",
@@ -226,13 +227,6 @@
       "error",
       "never"
     ],
-    "comma-spacing": [
-      "error",
-      {
-        "before": false,
-        "after": true
-      }
-    ],
     "comma-style": [
       "error",
       "last"
@@ -306,7 +300,7 @@
     "implicit-arrow-linebreak": "off",
     "indent": "off",
     "no-console": [
-      "error"
+      "warn"
     ],
     "jsx-quotes": [
       "error",
@@ -325,7 +319,7 @@
       "error"
     ],
     "lines-around-comment": [
-      "error",
+      "warn",
       {
         "beforeBlockComment": true,
         "beforeLineComment": true,
@@ -420,10 +414,6 @@
     "no-unneeded-ternary": "error",
     "no-whitespace-before-property": "error",
     "object-curly-newline": "off",
-    "object-curly-spacing": [
-      "error",
-      "always"
-    ],
     "object-property-newline": [
       "error",
       {
@@ -451,46 +441,6 @@
     "padded-blocks": [
       "error",
       "never"
-    ],
-    "padding-line-between-statements": [
-      "error",
-      {
-        "blankLine": "always",
-        "prev": "*",
-        "next": "return"
-      },
-      {
-        "blankLine": "always",
-        "prev": [
-          "const",
-          "let",
-          "var"
-        ],
-        "next": "*"
-      },
-      {
-        "blankLine": "any",
-        "prev": [
-          "const",
-          "let",
-          "var"
-        ],
-        "next": [
-          "const",
-          "let",
-          "var"
-        ]
-      },
-      {
-        "blankLine": "always",
-        "prev": "directive",
-        "next": "*"
-      },
-      {
-        "blankLine": "any",
-        "prev": "directive",
-        "next": "directive"
-      }
     ],
     "prefer-object-spread": "error",
     "quote-props": [
@@ -575,14 +525,6 @@
     "yield-star-spacing": [
       "error",
       "after"
-    ],
-    "sort-imports": [
-      "error",
-      {
-        "ignoreCase": true,
-        "ignoreDeclarationSort": true,
-        "ignoreMemberSort": false
-      }
     ],
     "jest/consistent-test-it": [
       "error",
@@ -691,7 +633,7 @@
       "error"
     ],
     "@typescript-eslint/no-unused-vars": [
-      "error"
+      "warn"
     ],
     "@typescript-eslint/array-type": [
       "error",
@@ -760,7 +702,7 @@
     "@typescript-eslint/no-unnecessary-type-arguments": "error",
     "@typescript-eslint/no-untyped-public-signature": "off",
     "@typescript-eslint/no-unused-expressions": "error",
-    "@typescript-eslint/no-unused-vars-experimental": "error",
+    "@typescript-eslint/no-unused-vars-experimental": "warn",
     "@typescript-eslint/no-useless-constructor": "off",
     "@typescript-eslint/prefer-for-of": "error",
     "@typescript-eslint/prefer-nullish-coalescing": "error",

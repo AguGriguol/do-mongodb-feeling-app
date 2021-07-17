@@ -8,10 +8,10 @@ const Routes = () => (
     <Route path="/login">
       <Login />
     </Route>
-    <Route path="/new">
+    <Route path="/feelings/:identifier">
       <CreateFeeling />
     </Route>
-    <Route path="/">
+    <Route path="/feelings">
       <FeelingList />
     </Route>
   </Switch>
