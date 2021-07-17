@@ -8,7 +8,7 @@ import { useSnackbar } from 'notistack';
 import type { LoginFormSchema } from 'auth/models/login';
 import { useAppDispatch, useAppSelector, useDidMountEffect } from '../../../app/root/hooks';
 import TextFormField from 'utils/components/TextFormField';
-import { login } from '../../ducks/login.auth';
+import { login } from '../../ducks/auth.slice';
 import { useStyles } from './LoginForm.styles';
 
 const loginSchema = yup.object().shape<LoginFormSchema>({
