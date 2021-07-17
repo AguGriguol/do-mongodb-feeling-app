@@ -1,0 +1,20 @@
+FROM node:14-alpine AS BUILD_IMAGE
+
+RUN apk update && apk add yarn curl bash python g++ make && rm -rf /var/cache/apk/*
+
+RUN mkdir -p /srv/api
+WORKDIR /srv/api
+ENV NODE_ENV production
+
+WORKDIR /srv/api
+COPY ../../api /srv/api
+
+RUN npm install --production
+
+FROM node:14-alpine
+
+ENV NODE_ENV production
+COPY --from=BUILD_IMAGE /srv/api /srv/api
+
+WORKDIR /srv/api
+CMD node api.js

@@ -1,0 +1,1251 @@
+{
+	"info": {
+		"_postman_id": "7b83757f-2dd4-4d3c-a672-0c6108643b7d",
+		"name": "FEELING TIMELINE API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Access",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let body = JSON.parse(responseBody);",
+							"pm.collectionVariables.set(\"accessToken\", body.accessToken);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"identifier\": \"agriguol\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{protocol}}://{{api_url}}:{{api_port}}/api/{{api_version}}/access",
+					"protocol": "{{protocol}}",
+					"host": [
+						"{{api_url}}"
+					],
+					"port": "{{api_port}}",
+					"path": [
+						"api",
+						"{{api_version}}",
+						"access"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Access",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"identifier\": \"agriguol\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{protocol}}://{{api_url}}:{{api_port}}/api/{{api_version}}/access",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{api_url}}"
+							],
+							"port": "{{api_port}}",
+							"path": [
+								"api",
+								"{{api_version}}",
+								"access"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 10 Jul 2021 21:26:58 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "access-control-allow-origin",
+							"value": "*"
+						},
+						{
+							"key": "access-control-allow-methods",
+							"value": "GET,PUT,POST,DELETE,OPTIONS"
+						},
+						{
+							"key": "access-control-allow-headers",
+							"value": "Content-Type, Authorization, Content-Length, X-Requested-With, X-Access-Token"
+						},
+						{
+							"key": "x-dns-prefetch-control",
+							"value": "off"
+						},
+						{
+							"key": "x-frame-options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "strict-transport-security",
+							"value": "max-age=15552000; includeSubDomains"
+						},
+						{
+							"key": "x-download-options",
+							"value": "noopen"
+						},
+						{
+							"key": "x-content-type-options",
+							"value": "nosniff"
+						},
+						{
+							"key": "x-xss-protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "etag",
+							"value": "W/\"285-FJIl0MD1MeV5OGFcrpcF+O8nW70\""
+						},
+						{
+							"key": "vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "cache-control",
+							"value": "private"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Expect-CT",
+							"value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "CF-RAY",
+							"value": "66ccdf961dce74fb-EZE"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"accessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGU5ZjFjMzg5Mjg3NzAwMTZlYTVhMzgiLCJlbnRpdHkiOiJ1c2VyIiwidHlwZSI6ImFjY2VzcyIsImlhdCI6MTYyNTk1MjQxOCwiZXhwIjoxNjI2MDM4ODE4fQ.qAavfmcJE3If5nO-0vlVdyzy6dv_nWSzEibw1HUdf1o\",\n    \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGU5ZjFjMzg5Mjg3NzAwMTZlYTVhMzgiLCJlbnRpdHkiOiJ1c2VyIiwidHlwZSI6InJlZnJlc2giLCJpYXQiOjE2MjU5NTI0MTgsImV4cCI6MTYyNjU1NzIxOH0.-yC180nMJo4-4DPlyq42GL6kaWjrNVENbhlt7fAu6wI\",\n    \"user\": {\n        \"enabled\": true,\n        \"_id\": \"60e9f1c38928770016ea5a38\",\n        \"identifier\": \"agriguol\",\n        \"created\": \"2021-07-10T19:15:15.165Z\",\n        \"updated\": \"2021-07-10T19:15:15.165Z\",\n        \"__v\": 0\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "GET Feeling types",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{accessToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{protocol}}://{{api_url}}:{{api_port}}/api/{{api_version}}/feeling_types",
+					"protocol": "{{protocol}}",
+					"host": [
+						"{{api_url}}"
+					],
+					"port": "{{api_port}}",
+					"path": [
+						"api",
+						"{{api_version}}",
+						"feeling_types"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "GET Feeling types",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{protocol}}://{{api_url}}:{{api_port}}/api/{{api_version}}/feeling_types",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{api_url}}"
+							],
+							"port": "{{api_port}}",
+							"path": [
+								"api",
+								"{{api_version}}",
+								"feeling_types"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET,PUT,POST,DELETE,OPTIONS"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type, Authorization, Content-Length, X-Requested-With, X-Access-Token"
+						},
+						{
+							"key": "X-DNS-Prefetch-Control",
+							"value": "off"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=15552000; includeSubDomains"
+						},
+						{
+							"key": "X-Download-Options",
+							"value": "noopen"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"4cb-sXgdftsQbk3y6vtEcJtK/M7MRUI\""
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 10 Jul 2021 22:06:23 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"feelingTypes\": [\n        {\n            \"_id\": \"60ea1666ffa2d6014629176e\",\n            \"code\": \"happy\",\n            \"created\": \"2021-07-10T21:51:34.988Z\",\n            \"updated\": \"2021-07-10T21:51:34.988Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"60ea1668ffa2d60146291771\",\n            \"code\": \"sad\",\n            \"created\": \"2021-07-10T21:51:36.892Z\",\n            \"updated\": \"2021-07-10T21:51:36.892Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"60ea1669ffa2d60146291773\",\n            \"code\": \"relaxed\",\n            \"created\": \"2021-07-10T21:51:37.073Z\",\n            \"updated\": \"2021-07-10T21:51:37.073Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"60ea1669ffa2d60146291775\",\n            \"code\": \"angry\",\n            \"created\": \"2021-07-10T21:51:37.248Z\",\n            \"updated\": \"2021-07-10T21:51:37.248Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"60ea1669ffa2d60146291777\",\n            \"code\": \"bored\",\n            \"created\": \"2021-07-10T21:51:37.422Z\",\n            \"updated\": \"2021-07-10T21:51:37.422Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"60ea1669ffa2d60146291779\",\n            \"code\": \"in_love\",\n            \"created\": \"2021-07-10T21:51:37.587Z\",\n            \"updated\": \"2021-07-10T21:51:37.587Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"60ea1669ffa2d6014629177b\",\n            \"code\": \"scared\",\n            \"created\": \"2021-07-10T21:51:37.755Z\",\n            \"updated\": \"2021-07-10T21:51:37.755Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"60ea1669ffa2d6014629177d\",\n            \"code\": \"sleepy\",\n            \"created\": \"2021-07-10T21:51:37.922Z\",\n            \"updated\": \"2021-07-10T21:51:37.922Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"60ea166affa2d6014629177f\",\n            \"code\": \"furious\",\n            \"created\": \"2021-07-10T21:51:38.089Z\",\n            \"updated\": \"2021-07-10T21:51:38.089Z\",\n            \"__v\": 0\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Create Feeling",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{accessToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"Me siento genial\",\n    \"shortDescription\": \"Dia complicado pero desafiante\",\n    \"feelingDescription\": \"Working Day\",\n    \"type\": \"60ea1666ffa2d6014629176e\",\n    \"feelingPicture\": {\n        \"fileName\": \"cbimage.png\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{protocol}}://{{api_url}}:{{api_port}}/api/{{api_version}}/feelings",
+					"protocol": "{{protocol}}",
+					"host": [
+						"{{api_url}}"
+					],
+					"port": "{{api_port}}",
+					"path": [
+						"api",
+						"{{api_version}}",
+						"feelings"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Create Feeling",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Me siento genial\",\n    \"shortDescription\": \"Dia complicado pero desafiante\",\n    \"feelingDescription\": \"Working Day\",\n    \"type\": \"60ea1666ffa2d6014629176e\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{protocol}}://{{api_url}}:{{api_port}}/api/{{api_version}}/feelings",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{api_url}}"
+							],
+							"port": "{{api_port}}",
+							"path": [
+								"api",
+								"{{api_version}}",
+								"feelings"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET,PUT,POST,DELETE,OPTIONS"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type, Authorization, Content-Length, X-Requested-With, X-Access-Token"
+						},
+						{
+							"key": "X-DNS-Prefetch-Control",
+							"value": "off"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=15552000; includeSubDomains"
+						},
+						{
+							"key": "X-Download-Options",
+							"value": "noopen"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "291"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"123-zzJRymo36ieF6Q0IaK2L22FKoIg\""
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 10 Jul 2021 22:31:52 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"feeling\": {\n        \"_id\": \"60ea1fd88c97ad0455ab2757\",\n        \"user\": \"60e9f1c38928770016ea5a38\",\n        \"title\": \"Me siento genial\",\n        \"shortDescription\": \"Dia complicado pero desafiante\",\n        \"feelingDescription\": \"Working Day\",\n        \"created\": \"2021-07-10T22:31:52.354Z\",\n        \"updated\": \"2021-07-10T22:31:52.354Z\",\n        \"__v\": 0\n    }\n}"
+				},
+				{
+					"name": "Create Feeling",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Me siento genial\",\n    \"shortDescription\": \"Dia complicado pero desafiante\",\n    \"feelingDescription\": \"Working Day\",\n    \"type\": \"60ea1666ffa2d6014629176e\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{protocol}}://{{api_url}}:{{api_port}}/api/{{api_version}}/feelings",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{api_url}}"
+							],
+							"port": "{{api_port}}",
+							"path": [
+								"api",
+								"{{api_version}}",
+								"feelings"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET,PUT,POST,DELETE,OPTIONS"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type, Authorization, Content-Length, X-Requested-With, X-Access-Token"
+						},
+						{
+							"key": "X-DNS-Prefetch-Control",
+							"value": "off"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=15552000; includeSubDomains"
+						},
+						{
+							"key": "X-Download-Options",
+							"value": "noopen"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "354"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"162-Mk+knPzxkGUKzXPWr6nxfTTjlSM\""
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 10 Jul 2021 22:36:46 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"feeling\": {\n        \"_id\": \"60ea20fe3a1a1d04c92aa41e\",\n        \"user\": \"60e9f1c38928770016ea5a38\",\n        \"title\": \"Me siento genial\",\n        \"feelingType\": {\n            \"id\": \"60ea1666ffa2d6014629176e\",\n            \"code\": \"happy\"\n        },\n        \"shortDescription\": \"Dia complicado pero desafiante\",\n        \"feelingDescription\": \"Working Day\",\n        \"created\": \"2021-07-10T22:36:46.119Z\",\n        \"updated\": \"2021-07-10T22:36:46.119Z\",\n        \"__v\": 0\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "GET Feeling",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{accessToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{protocol}}://{{api_url}}:{{api_port}}/api/{{api_version}}/feelings",
+					"protocol": "{{protocol}}",
+					"host": [
+						"{{api_url}}"
+					],
+					"port": "{{api_port}}",
+					"path": [
+						"api",
+						"{{api_version}}",
+						"feelings"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "GET Feeling",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{protocol}}://{{api_url}}:{{api_port}}/api/{{api_version}}/feelings?type=60ea1666ffa2d6014629176e",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{api_url}}"
+							],
+							"port": "{{api_port}}",
+							"path": [
+								"api",
+								"{{api_version}}",
+								"feelings"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "60ea1666ffa2d6014629176e"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET,PUT,POST,DELETE,OPTIONS"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type, Authorization, Content-Length, X-Requested-With, X-Access-Token"
+						},
+						{
+							"key": "X-DNS-Prefetch-Control",
+							"value": "off"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=15552000; includeSubDomains"
+						},
+						{
+							"key": "X-Download-Options",
+							"value": "noopen"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "357"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"165-BzuKvrllzOd5fVWsWauQu1veAzQ\""
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 10 Jul 2021 22:40:25 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"feelings\": [\n        {\n            \"_id\": \"60ea20fe3a1a1d04c92aa41e\",\n            \"user\": \"60e9f1c38928770016ea5a38\",\n            \"title\": \"Me siento genial\",\n            \"feelingType\": {\n                \"id\": \"60ea1666ffa2d6014629176e\",\n                \"code\": \"happy\"\n            },\n            \"shortDescription\": \"Dia complicado pero desafiante\",\n            \"feelingDescription\": \"Working Day\",\n            \"created\": \"2021-07-10T22:36:46.119Z\",\n            \"updated\": \"2021-07-10T22:36:46.119Z\",\n            \"__v\": 0\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Update Feeling",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{accessToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"Me siento genial\",\n    \"shortDescription\": \"Dia complicado pero desafiante\",\n    \"feelingDescription\": \"Working Day\",\n    \"type\": \"60ea1666ffa2d6014629176e\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{protocol}}://{{api_url}}:{{api_port}}/api/{{api_version}}/feelings/60ea20fe3a1a1d04c92aa41e",
+					"protocol": "{{protocol}}",
+					"host": [
+						"{{api_url}}"
+					],
+					"port": "{{api_port}}",
+					"path": [
+						"api",
+						"{{api_version}}",
+						"feelings",
+						"60ea20fe3a1a1d04c92aa41e"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Update Feeling",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Me siento genial\",\n    \"shortDescription\": \"Dia complicado pero desafiante\",\n    \"feelingDescription\": \"Working Day\",\n    \"type\": \"60ea1666ffa2d6014629176e\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{protocol}}://{{api_url}}:{{api_port}}/api/{{api_version}}/feelings/60ea20fe3a1a1d04c92aa41e",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{api_url}}"
+							],
+							"port": "{{api_port}}",
+							"path": [
+								"api",
+								"{{api_version}}",
+								"feelings",
+								"60ea20fe3a1a1d04c92aa41e"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET,PUT,POST,DELETE,OPTIONS"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type, Authorization, Content-Length, X-Requested-With, X-Access-Token"
+						},
+						{
+							"key": "X-DNS-Prefetch-Control",
+							"value": "off"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=15552000; includeSubDomains"
+						},
+						{
+							"key": "X-Download-Options",
+							"value": "noopen"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "354"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"162-k0g0VBIVApvQZOWjhnQGnyMYCmU\""
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 12 Jul 2021 21:00:33 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"feeling\": {\n        \"feelingType\": {\n            \"id\": \"60ea1666ffa2d6014629176e\",\n            \"code\": \"happy\"\n        },\n        \"_id\": \"60ea20fe3a1a1d04c92aa41e\",\n        \"user\": \"60e9f1c38928770016ea5a38\",\n        \"title\": \"Me siento genial\",\n        \"shortDescription\": \"Dia complicado pero desafiante\",\n        \"feelingDescription\": \"Working Day\",\n        \"created\": \"2021-07-10T22:36:46.119Z\",\n        \"updated\": \"2021-07-12T21:00:33.717Z\",\n        \"__v\": 0\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "GET One Feeling",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{accessToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{protocol}}://{{api_url}}:{{api_port}}/api/{{api_version}}/feelings/60ea20fe3a1a1d04c92aa41e",
+					"protocol": "{{protocol}}",
+					"host": [
+						"{{api_url}}"
+					],
+					"port": "{{api_port}}",
+					"path": [
+						"api",
+						"{{api_version}}",
+						"feelings",
+						"60ea20fe3a1a1d04c92aa41e"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "GET One Feeling",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{protocol}}://{{api_url}}:{{api_port}}/api/{{api_version}}/feelings/60ea20fe3a1a1d04c92aa41e",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{api_url}}"
+							],
+							"port": "{{api_port}}",
+							"path": [
+								"api",
+								"{{api_version}}",
+								"feelings",
+								"60ea20fe3a1a1d04c92aa41e"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET,PUT,POST,DELETE,OPTIONS"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type, Authorization, Content-Length, X-Requested-With, X-Access-Token"
+						},
+						{
+							"key": "X-DNS-Prefetch-Control",
+							"value": "off"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=15552000; includeSubDomains"
+						},
+						{
+							"key": "X-Download-Options",
+							"value": "noopen"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "354"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"162-k0g0VBIVApvQZOWjhnQGnyMYCmU\""
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 12 Jul 2021 21:01:42 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"feeling\": {\n        \"feelingType\": {\n            \"id\": \"60ea1666ffa2d6014629176e\",\n            \"code\": \"happy\"\n        },\n        \"_id\": \"60ea20fe3a1a1d04c92aa41e\",\n        \"user\": \"60e9f1c38928770016ea5a38\",\n        \"title\": \"Me siento genial\",\n        \"shortDescription\": \"Dia complicado pero desafiante\",\n        \"feelingDescription\": \"Working Day\",\n        \"created\": \"2021-07-10T22:36:46.119Z\",\n        \"updated\": \"2021-07-12T21:00:33.717Z\",\n        \"__v\": 0\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "UPLOAD Image",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{accessToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/Users/agustingriguol/Downloads/cbimage.png"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{protocol}}://{{api_url}}:{{api_port}}/api/{{api_version}}/files",
+					"protocol": "{{protocol}}",
+					"host": [
+						"{{api_url}}"
+					],
+					"port": "{{api_port}}",
+					"path": [
+						"api",
+						"{{api_version}}",
+						"files"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "UPLOAD Image",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/Users/agustingriguol/Downloads/cbimage.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{protocol}}://{{api_url}}:{{api_port}}/api/{{api_version}}/files",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{api_url}}"
+							],
+							"port": "{{api_port}}",
+							"path": [
+								"api",
+								"{{api_version}}",
+								"files"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET,PUT,POST,DELETE,OPTIONS"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type, Authorization, Content-Length, X-Requested-With, X-Access-Token"
+						},
+						{
+							"key": "X-DNS-Prefetch-Control",
+							"value": "off"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=15552000; includeSubDomains"
+						},
+						{
+							"key": "X-Download-Options",
+							"value": "noopen"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "41"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"29-rIr8DP3BecC7eG6KNxRBqlxzrFA\""
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 14 Jul 2021 00:46:19 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"fileName\": \"cbimage.png\"\n}"
+				}
+			]
+		},
+		{
+			"name": "GET IMAGE",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{accessToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{protocol}}://{{api_url}}:{{api_port}}/api/{{api_version}}/files/cbimage.png",
+					"protocol": "{{protocol}}",
+					"host": [
+						"{{api_url}}"
+					],
+					"port": "{{api_port}}",
+					"path": [
+						"api",
+						"{{api_version}}",
+						"files",
+						"cbimage.png"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "GET IMAGE",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{protocol}}://{{api_url}}:{{api_port}}/api/{{api_version}}/files/cbimage.png",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{api_url}}"
+							],
+							"port": "{{api_port}}",
+							"path": [
+								"api",
+								"{{api_version}}",
+								"files",
+								"cbimage.png"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET,PUT,POST,DELETE,OPTIONS"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type, Authorization, Content-Length, X-Requested-With, X-Access-Token"
+						},
+						{
+							"key": "X-DNS-Prefetch-Control",
+							"value": "off"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=15552000; includeSubDomains"
+						},
+						{
+							"key": "X-Download-Options",
+							"value": "noopen"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "192"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"c0-dccSuWpN8qsISYZnt9n+SouGB1s\""
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 14 Jul 2021 00:48:50 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"url\": \"https://do-ag-space.sfo3.digitaloceanspaces.com/feeling_app/cbimage.png?AWSAccessKeyId=LCCVSZY3OWJPNNSCEUFJ&Expires=1626227330&Signature=s7bJt2bbS4vn3Tj5PuvVryu7LKw%3D\"\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "api_url",
+			"value": "localhost"
+		},
+		{
+			"key": "accessToken",
+			"value": ""
+		},
+		{
+			"key": "api_version",
+			"value": "v1"
+		},
+		{
+			"key": "protocol",
+			"value": "http"
+		},
+		{
+			"key": "api_port",
+			"value": "20000"
+		},
+		{
+			"key": "accessTken",
+			"value": ""
+		}
+	]
+}
