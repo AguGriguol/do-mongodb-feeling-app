@@ -73,12 +73,23 @@ function FeelingService({ Feeling, FeelingType }) {
 
         return { feeling };
     };
+    const deleteOne = async (identifier) => {
+        let feeling = await Feeling.findOne({
+            _id: mongoose.Types.ObjectId(identifier),
+        }).exec();
+        if (!feeling) throw new Error(StatusCodes.NOT_FOUND);
+
+        await feeling.remove();
+
+        return true;
+    };
 
     return {
         get,
         create,
         update,
         getOne,
+        deleteOne
     };
 }
 

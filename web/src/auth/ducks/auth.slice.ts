@@ -1,7 +1,8 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
-import API from '../../constants/api';
-import { AuthStateSchema } from '../models/login';
+import API from 'constants/api';
+import { AuthStateSchema } from 'auth/models/login';
+import { setAuthToken } from 'app/root/rest';
 
 const initialState: AuthStateSchema = {
   accessToken: null,
@@ -22,7 +23,7 @@ export const login = createAsyncThunk<{ accessToken: string; refreshToken: strin
         identifier: username.trim()
       }
     });
-
+    setAuthToken(accessToken);
     return {
       refreshToken,
       accessToken,

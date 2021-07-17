@@ -1,9 +1,11 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
-import auth from '../../auth/ducks/auth.slice';
+import auth from 'auth/ducks/auth.slice';
+import feeling from 'feelings/ducks/feeling.slice';
 
 export const store = configureStore({
   reducer: {
-    auth
+    auth,
+    feeling
   }
 });
 

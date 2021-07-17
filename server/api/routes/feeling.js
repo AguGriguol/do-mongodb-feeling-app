@@ -81,5 +81,17 @@ router
                 return sendErrorResponse(err, res);
             }
         }
+    )
+    .delete(
+        async (req, res) => {
+            try {
+                await req.container
+                    .resolve('FeelingService')
+                    .deleteOne(req.params.identifier);
+                return res.status(200).json({ success: true });
+            } catch (err) {
+                return sendErrorResponse(err, res);
+            }
+        }
     );
 module.exports = router;
