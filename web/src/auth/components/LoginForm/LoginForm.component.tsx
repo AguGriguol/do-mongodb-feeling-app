@@ -7,7 +7,7 @@ import TextFormField from 'utils/components/TextFormField';
 import type { LoginFormSchema } from 'auth/models/login';
 
 const loginSchema = yup.object().shape<LoginFormSchema>({
-  username: yup.string().required('Identifier is required')
+  username: yup.string().required('Username is required')
 });
 
 const loginDefaultSchema: LoginFormSchema = {
