@@ -3,7 +3,9 @@ import { EntityState } from '@reduxjs/toolkit';
 export type FeelingFormSchema = {
   title: string,
   type: string;
-  image: File | null;
+  shortDescription: string;
+  feelingDescription: string
+  image: File | null | string;
 };
 
 export interface Feeling {
@@ -15,11 +17,16 @@ export interface Feeling {
   },
   shortDescription: string;
   feelingDescription: string;
-  feelingPicture: {
+  feelingPicture?: {
       fileName: string;
   };
   created: string;
   deleteStatus?: 'idle' | 'deleting'
+};
+
+export interface FeelingType {
+  _id: string;
+  code: string;
 };
 
 export interface FeelingStatus {
@@ -29,4 +36,8 @@ export interface FeelingStatus {
 export interface FeelingState {
   feelings: EntityState<Feeling> & FeelingStatus,
   deleteStatus: 'idle' | 'deleting' | 'succeeded' | 'failed';
+  feelingTypes: EntityState<FeelingType>,
+  feelingUpsertStatus: 'idle' | 'saving' | 'succeeded' | 'failed';
+  feelingFecthStatus: 'idle' | 'searching' | 'succeeded' | 'failed';
+  selectedFeeling: Feeling | null;
 };

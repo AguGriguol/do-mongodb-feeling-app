@@ -1,8 +1,11 @@
 import { useHistory } from 'react-router-dom';
 import { Avatar, Box, CircularProgress, IconButton, ListItem, ListItemAvatar, ListItemSecondaryAction, ListItemText, Paper } from '@material-ui/core';
 import { DeleteOutline } from '@material-ui/icons';
+
 import { Feeling } from 'feelings/models/feeling';
 import { useStyles } from './FeelingItem.styles';
+import { fetchFeeling } from 'feelings/ducks/feeling.slice';
+import { useAppDispatch } from 'app/root/hooks';
 
 type FeelingItemType = {
   feeling: Feeling;
@@ -12,9 +15,11 @@ type FeelingItemType = {
 const FeelingItem = ({ feeling, onDeleteFeeling }: FeelingItemType) => {
   const history = useHistory();
   const classes = useStyles();
+  const dispatch = useAppDispatch();
 
   const handleClick = () => {
-    history.push('/new');
+    void dispatch(fetchFeeling({ identifier: feeling._id }));
+    history.push(`/feelings/${feeling._id}`);
   };
 
   const deleteFeeling = (evt: any, feel: Feeling) => {

@@ -9,6 +9,9 @@ export const useStyles = makeStyles(({ spacing }) =>
     },
     input: {
       display: 'none'
+    },
+    label: {
+      margin: 0
     }
   })
 );

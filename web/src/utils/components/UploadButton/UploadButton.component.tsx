@@ -12,9 +12,9 @@ const UploadButton = ({ onChange }: UploadButtonProps) => {
   return (
     <Box className={classes.root}>
       <input accept="image/*" className={classes.input} id="contained-button-file" onChange={onChange} type="file" />
-      <label htmlFor="contained-button-file">
+      <label className={classes.label} htmlFor="contained-button-file">
         <Button color="primary" component="span" variant="contained">
-          Upload
+          Upload a picture about your feeling
         </Button>
       </label>
     </Box>

@@ -68,6 +68,7 @@ function FeelingService({ Feeling, FeelingType }) {
         if (body.shortDescription) feeling.shortDescription = body.shortDescription;
         if (body.feelingDescription) feeling.feelingDescription = body.feelingDescription;
         if (body.feelingPicture) feeling.feelingPicture = body.feelingPicture;
+        if (body.deletePicture) feeling.feelingPicture = undefined;
 
         feeling = await feeling.save();
 
