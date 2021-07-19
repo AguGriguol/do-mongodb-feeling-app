@@ -32,7 +32,7 @@ const FeelingItem = ({ feeling, onDeleteFeeling }: FeelingItemType) => {
       <Paper className={classes.paper} onClick={handleClick}>
         <ListItem>
           <ListItemAvatar>
-            <Avatar alt="Remy Sharp" src={`${window.location.origin}/assets/${feeling.feelingType.code}.png`} />
+            <Avatar alt="Remy Sharp" src={`/do-mongodb-feeling-app/assets/${feeling.feelingType.code}.png`} />
           </ListItemAvatar>
           <ListItemText primary={feeling.title} secondary={`${feeling.shortDescription} - ${new Date(feeling.created).toLocaleDateString('en-US')}`} />
           <ListItemSecondaryAction>
