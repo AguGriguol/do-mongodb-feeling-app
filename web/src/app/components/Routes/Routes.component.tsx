@@ -19,6 +19,9 @@ const RestrictedRoute = ({ path, Component }: { path: string; Component: any }) 
 
 const Routes = () => (
   <Switch>
+    <Route exact path="/">
+      <Redirect to="/login" />
+    </Route>
     <Route path="/login">
       <Login />
     </Route>

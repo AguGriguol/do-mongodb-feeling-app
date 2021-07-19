@@ -71,6 +71,7 @@ export const createOrUpdateFeeling = createAsyncThunk<boolean, { feeling: RestFe
     let url = `${API.url}/feelings`;
     const method = feeling._id === 'new' ? 'POST' : 'PUT';
     if (feeling._id !== 'new') url += `/${feeling._id}`;
+    if (feeling._id === 'new') delete feeling.deletePicture;
     delete feeling._id;
 
     if (picture && typeof picture !== 'string') {
