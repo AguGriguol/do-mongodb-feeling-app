@@ -16,7 +16,7 @@ A user must enter his "username" (if the user does not exist, the API will creat
 
 (*) The app does not manage the session in local storage, so if you refresh the page you should enter the same username again.
 
-(*) If you want to use an existing user with some created feelings, you could use "usertest" username.
+(*) If you want to use an existing user with some created feelings, you could use "user1234" username.
 
 ### Technological stack
 
