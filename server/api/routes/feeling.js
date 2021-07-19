@@ -69,6 +69,10 @@ router
                 type: Joi.string(),
                 shortDescription: Joi.string(),
                 feelingDescription: Joi.string(),
+                feelingPicture: {
+                    fileName: Joi.string()
+                },
+                deletePicture: Joi.boolean()
             }),
         }),
         async (req, res) => {

@@ -6,7 +6,7 @@ import { ErrorOutlineOutlined, AddCommentOutlined } from '@material-ui/icons';
 import FeelingItem from 'feelings/components/FeelingItem';
 import DeleteConfirmationModal from 'feelings/components/FeelingList/DeleteConfirmationModal.component';
 import { useAppDispatch, useAppSelector } from 'app/root/hooks';
-import { deleteFeeling, fetchFeelings } from 'feelings/ducks/feeling.slice';
+import { deleteFeeling, fetchFeelings, fetchFeelingTypes } from 'feelings/ducks/feeling.slice';
 import { Feeling } from 'feelings/models/feeling';
 import { useStyles } from './FeelingList.styles';
 
@@ -22,17 +22,18 @@ const FeelingList = () => {
 
   useEffect(() => {
     void dispatch(fetchFeelings());
+    void dispatch(fetchFeelingTypes());
   }, [dispatch]);
 
   const handleCreateClick = () => {
-    history.push('/new');
+    history.push('/feelings/new');
   };
 
   const deleteExistingFeeling = () => {
     if (feelingToDelete) void dispatch(deleteFeeling({ identifier: feelingToDelete._id}));
     setFeelingToDelete(null);
   };
-  // TODO LOADING
+
   return (
     <Container className={classes.container}>
       <Box display="flex" justifyContent="space-between" marginBottom={4} marginTop={8}>

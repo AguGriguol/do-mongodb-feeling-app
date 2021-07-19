@@ -3,16 +3,15 @@ import Login from 'auth/components/Login';
 import CreateFeeling from 'feelings/components/CreateFeeling';
 import FeelingList from 'feelings/components/FeelingList';
 import { useAppSelector } from 'app/root/hooks';
-import { ReactNode } from 'react';
 
-const RestrictedRoute = ({ path, component }: { path: string; component: ReactNode }) => {
+const RestrictedRoute = ({ path, Component }: { path: string; Component: any }) => {
   const status = useAppSelector(state => state.auth.status);
   return (
     <Route
       path={path}
-      render={() => {
+      render={props => {
         if (status !== 'succeeded') return <Redirect to="/login" />;
-        return component;
+        return <Component {...props}/>;
       }}
     />
   );
@@ -20,11 +19,14 @@ const RestrictedRoute = ({ path, component }: { path: string; component: ReactNo
 
 const Routes = () => (
   <Switch>
+    <Route exact path="/">
+      <Redirect to="/login" />
+    </Route>
     <Route path="/login">
       <Login />
     </Route>
-    <RestrictedRoute component={<CreateFeeling />} path="/feelings/:identifier"/>
-    <RestrictedRoute component={<FeelingList />} path="/feelings"/>
+    <RestrictedRoute Component={CreateFeeling} path="/feelings/:identifier"/>
+    <RestrictedRoute Component={FeelingList} path="/feelings"/>
   </Switch>
 );
 
