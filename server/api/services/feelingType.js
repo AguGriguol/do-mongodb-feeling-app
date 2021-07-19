@@ -1,16 +1,16 @@
 function FeelingTypeService({ FeelingType }) {
-    const get = async (query) => {
-        let filters = {};
-        if (query.code) filters.code = query.code;
+  const get = async query => {
+    let filters = {};
+    if (query.code) filters.code = query.code;
 
-        let feelingTypes = await FeelingType.find(filters).exec();
+    let feelingTypes = await FeelingType.find(filters).exec();
 
-        return { feelingTypes };
-    };
+    return { feelingTypes };
+  };
 
-    return {
-        get,
-    };
+  return {
+    get
+  };
 }
 
 module.exports = FeelingTypeService;

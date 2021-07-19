@@ -2,20 +2,20 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const FeelingSchema = new Schema(
-    {
-        user: { type: Schema.Types.ObjectId, ref: 'User' },
-        feelingType: {
-            id: { type: Schema.Types.ObjectId, ref: 'FeelingType' },
-            code: { type: String },
-        },
-        title: { type: String },
-        shortDescription: { type: String },
-        feelingDescription: { type: String },
-        feelingPicture: {
-            fileName: { type: String },
-        },
+  {
+    user: { type: Schema.Types.ObjectId, ref: 'User' },
+    feelingType: {
+      id: { type: Schema.Types.ObjectId, ref: 'FeelingType' },
+      code: { type: String }
     },
-    { timestamps: { createdAt: 'created', updatedAt: 'updated' } }
+    title: { type: String },
+    shortDescription: { type: String },
+    feelingDescription: { type: String },
+    feelingPicture: {
+      fileName: { type: String }
+    }
+  },
+  { timestamps: { createdAt: 'created', updatedAt: 'updated' } }
 );
 
 FeelingSchema.index({ user: 1 });

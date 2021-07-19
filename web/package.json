@@ -1,6 +1,6 @@
 {
-  "name": "web",
-  "version": "0.1.0",
+  "name": "feeling-web",
+  "version": "1.0.0",
   "private": true,
   "browserslist": {
     "production": [
@@ -15,7 +15,7 @@
     ]
   },
   "scripts": {
-    "build": "react-app-rewired build",
+    "build": "PUBLIC_URL=https://feeling-api-h2uvb.ondigitalocean.app/do-mongodb-feeling-app && react-app-rewired build",
     "eject": "react-scripts eject",
     "format:check": "yarn prettier --list-different \"src/**/*.{ts,tsx,js,jsx}\"",
     "format": "yarn prettier --write \"src/**/*.{ts,tsx,js,jsx}\"",
@@ -23,7 +23,7 @@
     "lint:js": "eslint src --no-error-on-unmatched-pattern --ext .js,.jsx",
     "lint:ts": "eslint src --ext .ts,.tsx",
     "lint": "yarn lint:ts && yarn lint:js && yarn lint:css",
-    "start": "cross-env BROWSER='Google Chrome' && react-app-rewired start"
+    "start": "PUBLIC_URL=htts://localhost:20000 && cross-env BROWSER='Google Chrome' && react-app-rewired start"
   },
   "dependencies": {
     "@material-ui/core": "^4.12.1",
