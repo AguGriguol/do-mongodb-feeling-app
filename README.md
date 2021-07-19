@@ -14,8 +14,9 @@ A user must enter his "username" (if the user does not exist, the API will creat
 - Feeling deletion: The user can delete a feeling, clicking on the trash icon in the feeling list. After a confirmation, the feeling will be deleted.
 - Feeling update: The user can see the feeling details clicking on a row. The user can update any data.
 
-(**) The app does not manage the session in local storage, so if you refresh the page you should enter the same username again.
-(**) If you want to use an existing user with some created feelings, you could use "usertest" username.
+(*) The app does not manage the session in local storage, so if you refresh the page you should enter the same username again.
+
+(*) If you want to use an existing user with some created feelings, you could use "usertest" username.
 
 ### Technological stack
 
@@ -31,7 +32,7 @@ This project uses DO products to deploy the platform. I'll explain the app compo
 - Managed MongoDB database:
 	- Standalone node over TLS.
 
-(**) The ENV variables have been removed from the repository.
+(*) The ENV variables have been removed from the repository.
 
 ### Repository organization
 
