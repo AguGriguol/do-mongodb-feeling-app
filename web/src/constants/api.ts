@@ -3,7 +3,7 @@ type API = {
 };
 
 const config: API = {
-  url: 'http://localhost:20000/api/v1'
+  url: 'https://feeling-api-h2uvb.ondigitalocean.app//api/v1'
 };
 
 export default config;

@@ -1,4 +1,4 @@
-import { BrowserRouter } from 'react-router-dom';
+import { HashRouter as Router } from 'react-router-dom';
 import { CssBaseline } from '@material-ui/core';
 import { ThemeProvider } from '@material-ui/core/styles';
 import { theme } from 'utils/theme/base';
@@ -13,9 +13,9 @@ const Root = () => (
     <ThemeProvider theme={theme}>
       <SnackbarProvider maxSnack={3}>
         <CssBaseline />
-        <BrowserRouter>
+        <Router>
           <Routes />
-        </BrowserRouter>
+        </Router>
       </SnackbarProvider>
     </ThemeProvider>
   </Provider>
