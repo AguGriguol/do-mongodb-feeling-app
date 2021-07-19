@@ -84,5 +84,5 @@
     "typescript": "^4.3.5",
     "web-vitals": "^2.1.0"
   },
-  "homepage": "."
+  "homepage": "do-mongodb-feeling-app"
 }
