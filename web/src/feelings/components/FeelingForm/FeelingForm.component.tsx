@@ -99,7 +99,7 @@ const FeelingForm = () => {
                   <FormControlLabel control={<Radio />} label="Scared" value="scared" />
                   <FormControlLabel control={<Radio />} label="Sleepy" value="sleepy" />
                 </Box>
-                <Avatar alt="Remy Sharp" className={classes.avatar} src={`/do-mongodb-feeling-app/assets/${values.type}.png`} />
+                <Avatar alt="Remy Sharp" className={classes.avatar} src={`${process.env.PUBLIC_URL}/assets/${values.type}.png`} />
               </Box>
             </RadioGroup>
           </Box>
