@@ -2,30 +2,31 @@
 
 ### The Project
 
-Feeling app is a DigitalOcean mongodb hackaton project. It's a CRUD feeling timeline app build in with the DO stack.
-A user must enter his "username" (if the user does not exists, the API will create one) in the sing in form, and press "login" button. A feeling panel will be displayed, the user can create, see, update and delete feelings.
+Feeling app is a DigitalOcean MongoDB hackathon project. It's a CRUD feeling timeline app built with the DO stack.
+A user must enter his "username" (if the user does not exist, the API will create one) in the login form, and press the "login" button. A feeling panel will be displayed, in which the user can create, see, update and delete feelings.
 - Feeling creation: The user must press "CREATE FEELING" button. A form will be displayed. The fields to complete are:
 	1. Title: a title in order to identify your feeling. (required)
 	2. Short description: a summary of you feeling. (required)
-	3. Type: A emoji in order to represent your feeling.
-	4. Feeling description: a detailed explanation about you feeling, places, people, time, etcetera.
-	5. Feeling image: an image in order to explain graphically your feeling.
-- Feeling list: All of your feeling in a responsive list ordered by created date.
-- Feeling deletion: The user could delete a feeling, pressing in the trash icon in the feeling list. After a confirmation, the feeling will be deleted.
-- Feeling update: The user can access teh feeling detail pressing the feeling row, the form will be filled with the data. The user could update any data.
+	3. Type: an emoji in order to represent your feeling.
+	4. Feeling description: a detailed explanation about you feeling, places, people, time, etc.
+	5. Feeling image: an image in order to graphically explain your feeling.
+- Feeling list: All of your feelings in a responsive list ordered by its creation date.
+- Feeling deletion: The user can delete a feeling, clicking on the trash icon in the feeling list. After a confirmation, the feeling will be deleted.
+- Feeling update: The user can see the feeling details clicking on a row. The user can update any data.
 
-(**) The app does not manage the session in local storage, so that if you refresh the page you should enter the same username again.
+(**) The app does not manage the session in local storage, so if you refresh the page you should enter the same username again.
+(**) If you want to use an existing user with some created feelings, you could use "usertest" username.
 
-### Technology stack
+### Technological stack
 
 This project uses DO products to deploy the platform. I'll explain the app components below:
 
 - Feeling API:
 	- Developed in NodeJS.
-	- Deployed in Docker using DigitalOceon Container Registry and App Platform as Web Service.
-	- Use DO Spaces in order to upload and manage feeling images with a restricted CDN to access to object storages.
+	- Deployed in Docker using DigitalOcean Container Registry and App Platform as Web Service.
+	- Use DO Spaces in order to upload and manage feeling images with a restricted CDN to access to object storage.
 - Feeling WEB:
-	- Develped in React JS with react toolkit (redux-thunk), material UI and TypeScript.
+	- Developed in React JS with Redux Toolkit, Material UI and TypeScript.
 	- Deployed with App Platform as Static Assets.
 - Managed MongoDB database:
 	- Standalone node over TLS.
@@ -34,21 +35,21 @@ This project uses DO products to deploy the platform. I'll explain the app compo
 
 ### Repository organization
 
-- Feeling API is located in /server, inside you can access to a POSTMAN collection to test the API. This collection has all enpoints used into the API.
-- Feeling WEB is located in /web, this folder has a quickly readme how to up the reactJS project.
+- Feeling API is located in /server. Inside, you can access to a POSTMAN collection to test the API. This collection has all the enpoints used in the API.
+- Feeling WEB is located in /web. This folder has a quick readme on how to set up the ReactJS project.
 
 ### DigitalOcean review
 
-DigitalOcean is a great deployment and building tool, his products are predictible and easy to use. I choose it because is reliable and fast, I use DO for all our company projects in production and we have had excellent results.
-This projects was my first experience with App Platform and Managed MongoDB database, it was awesome. The DO serverless arch is fast and quickly to set up, it's a recommended suite.
-I think that DO should improve two main things in order to be usefull:
-	- It is not possible to associate the app service (web service) to external services (MongoDB Atlas) without open the whitelist, and that, maybe it's a security problem.
+DigitalOcean is a great deployment and building tool, its products are predictable and easy to use. I’ve chosen it due to its reliability and speed, which have led our company projects in production to an excellent outcome.
+This projects was my first experience with App Platform and Managed MongoDB database, it was certainly awesome. The DO serverless arch is fast and quickly to set up.
+I think that DO should improve these two things to make it a more complete product:
+	- It is not possible to associate the app service (web service) to external services (MongoDB Atlas) without opening the whitelist, and that may be a security issue.
 	- Add a VPC.
-I've heard that they are working on it, I'm wating those amazing features.
+I've heard that they are working on it, I'm waiting those amazing features.
 
 ## What's next
 
 - Session storage management.
 - Add password access.
 - Compression images and thumbnail.
-- NodeJS with typescript.
+- NodeJS with TypeScript.
